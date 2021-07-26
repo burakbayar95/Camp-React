@@ -31,7 +31,7 @@ export default class App extends Component {
       console.log(datas)
 
       const names=datas.map((element)=>element.name);
-      const names=datas.map((element)=>element.name);
+      
       
       
       this.setState({names:names})
