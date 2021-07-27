@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
-import "./index.css"
-import "bootstrap/dist/css/bootstrap.min.css"
 import Navbar from './Navbar';
 import Header from './Header';
 import Cardlist from './Cardlist';
 import Footer from './Footer';
-import Card from './Card';
-import Login from './Login';
+import Login from './Login'
+
 
 
 export default class App extends Component {
@@ -16,8 +14,7 @@ export default class App extends Component {
 
     this.state = {
      items:[],
-     names:[]
-     
+     genres:[]
     };
   }
   componentDidMount()
@@ -25,43 +22,26 @@ export default class App extends Component {
     fetch("https://localhost:44392/api/camps/")
     .then((res)=>res.json())
     .then((data)=>{
-      this.setState({items:data});
-      
-      const datas=this.state.items
-      console.log(datas)
-
-      const names=datas.map((element)=>element.name);
-      
-      
-      
-      this.setState({names:names})
-      console.log(this.state.names)
-      console.log(names)
+      this.setState({items:data});});
 
 
-      
 
-
-    });
-
-
-    
+  
   }
   
-
+  
   render() {
     return (
         <div>
             <Navbar/>
-            <Header/>
-            
-            <section className="card-list">
-            <Cardlist
-            names={this.state.names}
+            <Header/>             
+            <Login/>
+            <Cardlist        
+            items={this.state.items}
+   
             />
-           
             
-          </section>
+       
           <Footer/>
 
           
