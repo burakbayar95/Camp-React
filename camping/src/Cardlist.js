@@ -8,18 +8,18 @@ export default class Cardlist extends Component {
   
     render() {
         return (
-            <div>
-                 <section className="card-list">
-
+            
+                
+<section className="card-list">
 
                  {this.props.items.map((item)=>(
-            <Card name={item.name} city={item.city} image={item.image} genreid={item.genreId}/>
+            <Card item={item}/>
           ))}
 
             
-          </section>
+            </section>
+           
             
-            </div>
         )
     }
 }
