@@ -13,7 +13,9 @@ export default class Cardlist extends Component {
 <section className="card-list">
 
                  {this.props.items.map((item)=>(
-            <Card item={item}/>
+                     
+            <Card key={item.id} item={item}/>
+            
           ))}
 
             

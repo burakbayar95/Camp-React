@@ -35,7 +35,6 @@ export default class App extends Component {
         <div>
             <Navbar/>
             <Header/>             
-            <Login/>
             <Cardlist        
             items={this.state.items}
    
